@@ -120,6 +120,3 @@ Swagger testing screenshots for POST/GET
 🙌 Author
 Built as part of the Chubb – .NET Microservices Assignment.
 
-
----
----
