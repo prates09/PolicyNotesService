@@ -49,8 +49,6 @@ PolicyNotesService.sln
 └── UnitTests
 └── PolicyNotesServiceUnitTests.cs
 
-yaml
-Copy code
 
 ---
 
