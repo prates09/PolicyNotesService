@@ -11,7 +11,7 @@ It is developed according to the assignment requirements:
 - **Unit Tests + Integration Tests using xUnit**
 
 ---
-
+```
 ## 🏗️ Project Structure
 
 PolicyNotesService.sln
@@ -49,7 +49,7 @@ PolicyNotesService.sln
 └── UnitTests
 └── PolicyNotesServiceUnitTests.cs
 
-
+```
 ---
 
 ## ⚙️ Features
