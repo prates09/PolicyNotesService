@@ -89,36 +89,24 @@ Covers:
 
 ## ▶️ How to Run the Project
 ```
-### 1️⃣ Restore Dependencies
+ 1️⃣ Restore Dependencies
 
 dotnet restore
 2️⃣ Run the API
-bash
-Copy code
+
 dotnet run --project PolicyNotesService
 The API will start at:
-
-arduino
-Copy code
 https://localhost:7096/
 3️⃣ Open Swagger UI
 Simply visit:
-
-bash
-Copy code
 https://localhost:7096/swagger
 🧪 Run All Tests
 Run both Unit Tests and Integration Tests:
 
-bash
-Copy code
 dotnet test
 📌 API Endpoints
 ➕ POST /notes
 Adds a new policy note. Example request body:
-
-json
-Copy code
 {
   "policyNumber": "POL-123",
   "note": "Sample note"
