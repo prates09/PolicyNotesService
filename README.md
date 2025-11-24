@@ -11,9 +11,9 @@ It is developed according to the assignment requirements:
 - **Unit Tests + Integration Tests using xUnit**
 
 ---
-```
-## 🏗️ Project Structure
 
+## 🏗️ Project Structure
+```
 PolicyNotesService.sln
 │
 ├── PolicyNotesService
