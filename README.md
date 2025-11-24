@@ -87,9 +87,9 @@ Covers:
 ---
 
 ## ▶️ How to Run the Project
-
+---
 ### 1️⃣ Restore dependencies  
-```bash
+
 dotnet restore
 2️⃣ Run the API
 bash
