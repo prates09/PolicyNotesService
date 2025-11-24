@@ -86,9 +86,10 @@ Covers:
 
 ---
 
+
 ## ▶️ How to Run the Project
----
-### 1️⃣ Restore dependencies  
+```
+### 1️⃣ Restore Dependencies
 
 dotnet restore
 2️⃣ Run the API
@@ -101,22 +102,47 @@ arduino
 Copy code
 https://localhost:7096/
 3️⃣ Open Swagger UI
+Simply visit:
+
 bash
 Copy code
 https://localhost:7096/swagger
 🧪 Run All Tests
+Run both Unit Tests and Integration Tests:
+
 bash
 Copy code
 dotnet test
-📸 Screenshots Included
-The submitted ZIP contains:
+📌 API Endpoints
+➕ POST /notes
+Adds a new policy note. Example request body:
 
+json
+Copy code
+{
+  "policyNumber": "POL-123",
+  "note": "Sample note"
+}
+📄 GET /notes
+Returns all notes.
+
+🔍 GET /notes/{id}
+Returns a note by id.
+
+200 OK → when the note exists
+
+404 NotFound → when missing
+
+📸 Screenshots Included in ZIP Submission
 Project structure (via tree /f)
 
 Test Explorer screenshot
 
-Swagger testing screenshots for POST/GET
+Swagger screenshots for POST/GET requests
+
+All tests GREEN ✔️
 
 🙌 Author
 Built as part of the Chubb – .NET Microservices Assignment.
 
+```
