@@ -89,14 +89,14 @@ Covers:
 
 ## ▶️ How to Run the Project
 ```
- 1️⃣ Restore Dependencies
-
+1️⃣ Restore Dependencies
 dotnet restore
-2️⃣ Run the API
 
+2️⃣ Run the API
 dotnet run --project PolicyNotesService
 The API will start at:
 https://localhost:7096/
+
 3️⃣ Open Swagger UI
 Simply visit:
 https://localhost:7096/swagger
