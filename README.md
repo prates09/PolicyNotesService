@@ -1,151 +1,128 @@
-PolicyNotesService – Microservice with .NET 8, EF Core InMemory & xUnit Testing
+# 📘 Policy Notes Service – Minimal API + InMemory EF Core + xUnit Tests
 
-A small microservice to store and retrieve internal notes for insurance policy numbers.
-Built as part of the assignment using .NET 8 Minimal APIs, EF Core InMemory, Repository + Service layers, and Unit & Integration Testing using xUnit.
+## 🚀 Overview
+This project implements a small microservice **PolicyNotesService** that allows an insurance company to store and retrieve **internal notes** for customer policies.
 
-Features
+It is developed according to the assignment requirements:
 
-.NET 8 Minimal API
+- **.NET 8 Minimal APIs**
+- **Entity Framework Core InMemory Database**
+- **Repository + Service Layers**
+- **Unit Tests + Integration Tests using xUnit**
 
-EF Core InMemory Database
+---
 
-Repository Layer
+## 🏗️ Project Structure
 
-Service Layer
-
-Unit Tests (xUnit)
-
-Integration Tests (xUnit + WebApplicationFactory)
-
-Swagger UI for API testing
-
-Project Structure
 PolicyNotesService.sln
 │
 ├── PolicyNotesService
-│   ├── appsettings.Development.json
-│   ├── appsettings.json
-│   ├── PolicyNotesService.csproj
-│   ├── PolicyNotesService.http
-│   ├── Program.cs
-│   │
-│   ├── Data
-│   │   └── PolicyNotesDbContext.cs
-│   │
-│   ├── Models
-│   │   └── PolicyNote.cs
-│   │
-│   ├── Properties
-│   │   └── launchSettings.json
-│   │
-│   ├── Repositories
-│   │   ├── IPolicyNoteRepository.cs
-│   │   └── PolicyNoteRepository.cs
-│   │
-│   └── Services
-│       ├── IPolicyNotesService.cs
-│       └── PolicyNotesService.cs
+│ ├── appsettings.Development.json
+│ ├── appsettings.json
+│ ├── PolicyNotesService.csproj
+│ ├── PolicyNotesService.http
+│ ├── Program.cs
+│ │
+│ ├── Data
+│ │ └── PolicyNotesDbContext.cs
+│ │
+│ ├── Models
+│ │ └── PolicyNote.cs
+│ │
+│ ├── Properties
+│ │ └── launchSettings.json
+│ │
+│ ├── Repositories
+│ │ ├── IPolicyNoteRepository.cs
+│ │ └── PolicyNoteRepository.cs
+│ │
+│ └── Services
+│ ├── IPolicyNotesService.cs
+│ └── PolicyNotesService.cs
 │
 └── PolicyNotesService.Tests
-    ├── PolicyNotesService.Tests.csproj
-    │
-    ├── IntegrationTests
-    │   └── NotesEndpointsIntegrationTests.cs
-    │
-    └── UnitTests
-        └── PolicyNotesServiceUnitTests.cs
+├── PolicyNotesService.Tests.csproj
+│
+├── IntegrationTests
+│ └── NotesEndpointsIntegrationTests.cs
+│
+└── UnitTests
+└── PolicyNotesServiceUnitTests.cs
 
-How to Run
-1. Navigate to project folder:
-cd PolicyNotesService
+yaml
+Copy code
 
-2. Run the API:
-dotnet run
+---
 
-3. Open Swagger UI:
+## ⚙️ Features
+
+### ✅ Add a Note  
+POST `/notes` → Returns **201 Created**
+
+### ✅ Retrieve All Notes  
+GET `/notes` → Returns **200 OK**
+
+### ✅ Retrieve Note by ID  
+GET `/notes/{id}` →  
+- **200 OK** when found  
+- **404 NotFound** when missing  
+
+### 🗄️ Database  
+- **EF Core InMemory** used for API + tests  
+- Data resets every time the application restarts  
+
+---
+
+## 🧪 Testing
+
+### ✔ Unit Tests (xUnit)
+Covers:
+- Adding a policy note  
+- Retrieving notes  
+
+### ✔ Integration Tests (xUnit + WebApplicationFactory)
+Covers:
+- POST `/notes` → **201 Created**
+- GET `/notes` → **200 OK**
+- GET `/notes/{id}` → **200 / 404**, depending on existence  
+
+---
+
+## ▶️ How to Run the Project
+
+### 1️⃣ Restore dependencies  
+```bash
+dotnet restore
+2️⃣ Run the API
+bash
+Copy code
+dotnet run --project PolicyNotesService
+The API will start at:
+
+arduino
+Copy code
+https://localhost:7096/
+3️⃣ Open Swagger UI
+bash
+Copy code
 https://localhost:7096/swagger
+🧪 Run All Tests
+bash
+Copy code
+dotnet test
+📸 Screenshots Included
+The submitted ZIP contains:
 
-API Endpoints
-POST /notes
+Project structure (via tree /f)
 
-Creates a new note.
-Example request body:
+Test Explorer screenshot
 
-{
-  "policyNumber": "POL-123",
-  "note": "Swagger test note"
-}
+Swagger testing screenshots for POST/GET
 
-GET /notes
+🙌 Author
+Built as part of the Chubb – .NET Microservices Assignment.
 
-Retrieves all notes.
+yaml
+Copy code
 
-GET /notes/{id}
-
-Retrieves a note by ID.
-
-200 OK → Found
-
-404 NotFound → Missing
-
-Testing
-Unit Tests (xUnit)
-
-File:
-
-PolicyNotesService.Tests/UnitTests/PolicyNotesServiceUnitTests.cs
-
-
-Covers:
-
-Adding a note
-
-Retrieving notes
-
-Integration Tests (xUnit)
-
-File:
-
-PolicyNotesService.Tests/IntegrationTests/NotesEndpointsIntegrationTests.cs
-
-
-Covers:
-
-POST /notes → 201 Created
-
-GET /notes → 200 OK
-
-GET /notes/{id} → 200 OK when found
-
-GET /notes/{id} → 404 NotFound when missing
-
-The tests override the API’s database service and inject a test-only InMemory database:
-
-services.AddDbContext<PolicyNotesDbContext>(options =>
-    options.UseInMemoryDatabase("IntegrationTestDb"));
-
-Screenshots Required for Assignment
-
-Project structure (command: tree /f)
-
-Test Explorer (all tests passing)
-
-Swagger UI showing endpoints and responses
-
-Tech Stack
-
-.NET 8
-
-ASP.NET Core Minimal API
-
-EF Core InMemory
-
-xUnit
-
-WebApplicationFactory
-
-Swagger / Swashbuckle
-
-Conclusion
-
-This project fully satisfies the assignment requirements by implementing a clean, testable, and lightweight microservice with proper separation of concerns and complete automated testing.
+---
